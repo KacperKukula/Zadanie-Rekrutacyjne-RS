@@ -1,0 +1,216 @@
+/* ////////////////////////             Navigation            /////////////////////////////// */
+
+html {
+    height: 105vh;
+    overflow-x: hidden;
+    font-size: 18px;
+    white-space: wrap;
+}
+
+.nav {
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: block;
+    background: #ECECEC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+}
+.nav-menu {
+    transition: all .3s ease;
+    color: #DADADA;
+    font-size: 1.75rem;
+    letter-spacing: 1.19px;
+}
+.nav-menu:hover {
+    color: #969696;
+    cursor: pointer;
+    text-shadow: 0px 0px 5px #ffffff;
+}
+
+/* ////////////////////////                 Slider things                /////////////////////////////// */
+
+.slider {
+    width: 100vw;
+    height: 90vh;
+    top: 10vh;
+    position: relative;
+    z-index: 0;
+}
+
+.slider-slide {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+}
+
+.slider-slide:first-child {display: block; z-index: 1;}
+
+/* ////////////////////////             Header, descrition etc.            /////////////////////////////// */
+
+.slider-text-container {
+    position: relative;
+    top: 22%;
+    width: 80%;
+    left: 13%;
+    font-family: 'Barlow', sans-serif;
+    font-weight: bold;
+}
+h1.slider-main-header {
+    color: #ffffff;
+    letter-spacing: 2.64px;
+    font-size: 3.5rem;
+    padding: 0;
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+h2.slider-second-header {
+    font-size: 2.2rem;
+    letter-spacing: 1.94px;
+    margin: 5px 0 0 40px;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-family: 'Work Sans', sans-serif;
+}
+
+p.slider-description {
+    margin-top: 40px;
+    padding: 0;
+    letter-spacing: 0.72px;
+    max-width: 920px;
+    line-height: 30px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+/*Progress bar*/
+.slider-progress-bar-grey {
+    margin-top: 20px;
+    height: 3px;
+    width: 450px; 
+    z-index: 5;
+    background-color: #ffffff;
+}
+.slider-progress-bar-green {
+    height: 3px;
+    width: 100%; 
+    z-index: 6;
+    background-color: #2ECC71;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation-timing-function: ease-in-out;
+}
+@keyframes StretchBar {
+    0% {
+        transform: scaleX(0);
+    }
+    1% {
+        transform: scaleX(0.01);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/*slider foot*/
+.slider-foot {
+    bottom: 0;
+    left: 12%;
+    position: absolute;
+    padding: 0 0 30px 22px;
+    font-size: 0.9rem;
+    z-index: 4;
+    border-left: 1px solid #FFFFFF;
+    font-family: 'Barlow', sans-serif;
+    text-align: left;
+    letter-spacing: 0.64px;
+    color: #FFFFFF;
+}
+.slider-foot:after {
+    content: "";
+    position: absolute;
+    bottom: -46px;
+    left: -1px;
+    border-left: 1px solid #F1C40F;
+    height: 46px;
+}
+/* ////////////////////////             Static element (dots, buttons) <-- not related with slides            /////////////////////////////// */
+
+.slider-dot-container {
+    position: absolute;
+    top: 19%;
+    height: 12px;
+    left: 13%;
+    display: flex;
+    gap: 12px;
+}
+.slider-dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 6px;
+    background: white;
+    z-index: 5;
+    opacity: 0.15;
+}
+.slider-dot:first-child {    
+    opacity: 0.15;
+    transform: scale(1.15);
+}
+.slider-button-wrapper {
+    z-index: 5;
+    position: absolute;
+    left: 13%;
+    top: 73%;
+    display: flex;
+    margin-top: 20px;       /*margin has no effect to pos. absolute, but I need it to add prefix in js*/
+    justify-content: left;
+    gap: 30px;
+    transition: all .5s ease .3s;
+}
+
+.slider-button-lorem, .slider-button-dolor {
+    width: 250px;
+    height: 60px;
+    border-radius: 7px;
+    color: #ffffff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.slider-button-lorem {
+    background: #2ECC71 0% 0% no-repeat padding-box;
+    border: none;
+    transition: all .3s ease;
+}
+.slider-button-dolor {
+    background: transparent;
+    border: 2px solid #2ECC71;
+    transition: all .3s ease;
+}
+.slider-button-lorem:hover {
+    cursor: pointer;
+    background: #5fb985 0% 0% no-repeat padding-box;
+    text-shadow: 0px 0px 5px #ffffff;
+    transform: scale(1.05);
+} 
+.slider-button-dolor:hover {
+    cursor: pointer;
+    border: 2px solid #4ceb8e;
+    text-shadow: 0px 0px 5px #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
