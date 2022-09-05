@@ -43,7 +43,7 @@
         width: 9px;
     }
     .slider-button-wrapper {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 20px;
         margin-top: 40px;
         justify-content: center;
