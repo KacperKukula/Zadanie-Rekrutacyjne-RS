@@ -68,12 +68,14 @@ p.slider-description {
     height: 3px;
     width: 450px; 
     z-index: 5;
+    padding: 0;
     background-color: #ffffff;
 }
 .slider-progress-bar-green {
     height: 3px;
     width: 100%; 
     z-index: 6;
+    margin: 0;
     background-color: #2ECC71;
     transform-origin: left;
     transform: scaleX(0);
