@@ -1,3 +1,8 @@
+@media screen and (max-width: 1700px) {
+    .slider-text-container {top: 15%;}
+    .slider-dot-container {top: 12%;}
+}
+
 @media screen and (max-width: 1400px) {
     html {font-size: 16px;}
     .slider-dot-container, 
@@ -21,10 +26,10 @@
         font-size: 9px;
     }
     .slider-text-container {
-        top: 10%;
+        top: 13%;
     }
     .slider-dot-container {
-        top: 6%;
+        top: 8%;
     }
     .slider-dot {
         height: 9px;
@@ -32,7 +37,7 @@
     }
     .slider-button-wrapper {
         flex-direction: column;
-        margin-top: 40px;
+        margin-top: 20px;
         gap: 20px;
         justify-content: center;
     }
@@ -42,7 +47,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
     }
-    .slider-description {height: 99px;}
+    .slider-description {height: 115px;}
     .slider-main-header {height: 65px;}
     .slider-second-header {height: 21px;}
 }

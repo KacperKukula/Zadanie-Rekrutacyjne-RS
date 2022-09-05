@@ -175,7 +175,7 @@ p.slider-description {
     left: 13%;
     top: 73%;
     display: flex;
-    margin-top: 20px;       /*margin has no effect to pos. absolute, but I need it to add prefix in js*/
+    margin-top: 40px;       /*margin has no effect to pos. absolute, but I need it to add prefix in js*/
     justify-content: left;
     gap: 30px;
     transition: all .5s ease .3s;
