@@ -43,15 +43,21 @@
         width: 9px;
     }
     .slider-button-wrapper {
-        flex-direction: column-reverse;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
         gap: 20px;
         margin-top: 40px;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
     .slider-description,
     .slider-main-header,
     .slider-second-header {
-        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
         overflow: hidden;
     }
     .slider-description {

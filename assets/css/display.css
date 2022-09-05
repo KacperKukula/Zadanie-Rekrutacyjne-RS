@@ -77,19 +77,41 @@ p.slider-description {
     z-index: 6;
     margin: 0;
     background-color: #2ECC71;
-    transform-origin: left;
-    transform: scaleX(0);
-    animation-timing-function: ease-in-out;
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes StretchBar {
+    0% {
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+    }
+    1% {
+        -webkit-transform: scaleX(0.01);
+                transform: scaleX(0.01);
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+    }
 }
 @keyframes StretchBar {
     0% {
-        transform: scaleX(0);
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
     }
     1% {
-        transform: scaleX(0.01);
+        -webkit-transform: scaleX(0.01);
+                transform: scaleX(0.01);
     }
     100% {
-        transform: scaleX(1);
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
     }
 }
 
@@ -122,6 +144,8 @@ p.slider-description {
     top: 19%;
     height: 12px;
     left: 13%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 12px;
 }
@@ -135,17 +159,25 @@ p.slider-description {
 }
 .slider-dot:first-child {    
     opacity: 0.15;
-    transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+            transform: scale(1.15);
 }
 .slider-button-wrapper {
     z-index: 5;
     position: absolute;
     left: 13%;
     top: 73%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-top: 40px;       /*margin has no effect to pos. absolute, but I need it to add prefix in js*/
-    justify-content: left;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
     gap: 30px;
+    -webkit-transition: all .5s ease .3s;
+    -o-transition: all .5s ease .3s;
     transition: all .5s ease .3s;
 }
 
@@ -162,23 +194,31 @@ p.slider-description {
 .slider-button-lorem {
     background: #2ECC71 0% 0% no-repeat padding-box;
     border: none;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
     transition: all .3s ease;
 }
 .slider-button-dolor {
     background: transparent;
     border: 2px solid #2ECC71;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
     transition: all .3s ease;
 }
 .slider-button-lorem:hover {
     cursor: pointer;
     background: #5fb985 0% 0% no-repeat padding-box;
     text-shadow: 0px 0px 5px #ffffff;
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 } 
 .slider-button-dolor:hover {
     cursor: pointer;
     border: 2px solid #4ceb8e;
     text-shadow: 0px 0px 5px #ffffff;
     background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
