@@ -8,31 +8,6 @@ const SlideTimeSwipe = 0.2        //Time slide change in sec  (Value to change)
 
 var SlideActive = 0
 
-window.addEventListener("load", ()=>{
-
-    gsap.to(Curtain, 0.5, {
-        delay: 0.8, 
-        opacity: 0, 
-        onComplete: ()=> {Curtain.style.display = "none"
-    }})
-
-    PositionTheButtonWrapper()
-
-    gsap.set(Dots[SlideActive], {opacity: 1, scale: 1.15})
-
-    //Prefix for slides progress bar
-    let ProgressBars = document.querySelectorAll(".slider-progress-bar-green");
-    ProgressBars.forEach((x)=> {
-        x.style.animationName = "StretchBar"
-        x.style.animationDuration = (SlideTimeDuration-0.5)+"s"
-        x.style.animationDelay = (SlideTimeSwipe+0.5)+"s"
-        x.style.animationFillMode = "both"
-    })
-
-    //Slider changing function in interval
-    setInterval(ChangeToNextSlide, SlideTimeDuration*1000)
-})
-
 function ChangeToNextSlide() {
 
     let TimeLine = gsap.timeline();
@@ -71,3 +46,30 @@ function PositionTheButtonWrapper() {
         +ButtonWrapper.style.marginTop
         +"px"
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//Onload
+window.addEventListener("load", ()=>{
+
+    gsap.to(Curtain, 0.5, {
+        delay: 0.8, 
+        opacity: 0, 
+        onComplete: ()=> {Curtain.style.display = "none"
+    }})
+
+    PositionTheButtonWrapper()
+
+    gsap.set(Dots[SlideActive], {opacity: 1, scale: 1.15})
+
+    //Prefix for slides progress bar
+    let ProgressBars = document.querySelectorAll(".slider-progress-bar-green");
+    ProgressBars.forEach((x)=> {
+        x.style.animationName = "StretchBar"
+        x.style.animationDuration = (SlideTimeDuration-0.5)+"s"
+        x.style.animationDelay = (SlideTimeSwipe+0.5)+"s"
+        x.style.animationFillMode = "both"
+    })
+
+    //Slider changing function in interval
+    setInterval(ChangeToNextSlide, SlideTimeDuration*1000)
+})
