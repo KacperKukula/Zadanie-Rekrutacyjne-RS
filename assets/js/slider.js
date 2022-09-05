@@ -1,13 +1,20 @@
+const Curtain = document.querySelector(".curtain")
+const Slides = document.querySelectorAll(".slider-slide")
+const Dots = document.querySelectorAll(".slider-dot")
+const Description = document.querySelectorAll(".slider-text-container")
+const ButtonWrapper = document.querySelector(".slider-button-wrapper")
+const SlideTimeDuration = 5       //Time slide live in sec    (Value to change)
+const SlideTimeSwipe = 0.2        //Time slide change in sec  (Value to change)
 
-var Slides = document.querySelectorAll(".slider-slide")
-var Dots = document.querySelectorAll(".slider-dot")
-var Description = document.querySelectorAll(".slider-text-container")
-var ButtonWrapper = document.querySelector(".slider-button-wrapper")
 var SlideActive = 0
-var SlideTimeDuration = 5       //Time slide live in sec    (Value to change)
-var SlideTimeSwipe = 0.2        //Time slide change in sec  (Value to change)
 
 window.addEventListener("load", ()=>{
+
+    gsap.to(Curtain, 0.5, {
+        delay: 0.8, 
+        opacity: 0, 
+        onComplete: ()=> {Curtain.style.display = "none"
+    }})
 
     PositionTheButtonWrapper()
 
@@ -64,4 +71,3 @@ function PositionTheButtonWrapper() {
         +ButtonWrapper.style.marginTop
         +"px"
 }
-
